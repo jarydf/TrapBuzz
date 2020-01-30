@@ -1,0 +1,53 @@
+.btn_nav {
+  background: none !important;
+  color: black;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+  cursor: pointer;
+  /*border is optional*/
+}
+
+.btn_nav:hover {
+  color: #9B30FF;
+}
+
+#blog_title {
+  color: black;
+  font-size: 2em;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#blog_pic {
+  width: 20em;
+  height: 20em;
+  position: relative;
+  float: left;
+  padding-right: 0.5em;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}

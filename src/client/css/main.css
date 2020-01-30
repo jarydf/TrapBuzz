@@ -1,0 +1,113 @@
+.icons {
+  width: 2em;
+  height: 2em;
+}
+
+li {
+  list-style-type: none;
+  display: inline;
+  padding-left: 0.75em;
+}
+
+nav {
+  float: right;
+}
+
+ul {
+  padding-right: 1em;
+}
+
+#profilelinks {
+  text-align: center;
+}
+
+header {
+  position: fixed;
+  z-index: 5;
+  background-color: white;
+  width: inherit;
+  top: 0em;
+  border-bottom: 1px solid black;
+}
+
+form {
+  display: inline;
+}
+
+#search {
+  width: 45em;
+}
+
+#main {
+  position: relative;
+  top: 6em;
+}
+
+#logo {
+  position: relative;
+  top: .75em;
+}
+
+body {
+  background-color: #443266;
+  top: 5em;
+  border-radius: 25px;
+  font-family: Arial, Helvetica, Verdana;
+}
+
+.dropbtn {
+  width: 1.75em;
+  height: 1.75em;
+  padding-left: 0.75em;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #F1F0FF;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-weight: bold;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #FFFFFF
+}
+
+.show {
+  display: block;
+}
+
+#search {
+  padding: 6px;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+}
+
+#submit_search {
+  outline: none;
+  background-color: #443266;
+  color: white;
+  padding: 6px 6px;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit_search:hover {
+  background-color: #9B30FF;
+}

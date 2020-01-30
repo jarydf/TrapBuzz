@@ -1,0 +1,209 @@
+.icons {
+  width: 2em;
+  height: 2em;
+}
+
+li {
+  list-style-type: none;
+  display: inline;
+  padding-left: 0.75em;
+}
+
+nav {
+  float: right;
+}
+
+#profilelinks {
+  text-align: center;
+}
+
+.profilesettings {
+  padding: 1em;
+}
+
+#changeProfilePicture {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 5;
+  background-color: white;
+  width: inherit;
+  top: 0em;
+}
+
+form {
+  display: inline;
+}
+
+#first {
+  overflow: hidden;
+}
+
+#second {
+  background-color: #443266;
+  min-height: 100em;
+  float: left;
+  padding-right: 10em;
+}
+
+.Edit {
+  float: right;
+}
+
+#bio {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 1em;
+  border-radius: 25px;
+  font-family: Arial, Helvetica, Verdana;
+}
+
+#main {
+  position: relative;
+  top: 3em;
+  padding-left: 1em;
+  background-color: #443266;
+}
+
+#logo {
+  position: relative;
+  top: .75em;
+}
+
+body {
+  background-color: #443266;
+  top: 5em;
+  border-radius: 25px;
+  font-family: Arial, Helvetica, Verdana;
+}
+
+ul {
+  padding-right: 1em;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  padding: 0.5em;
+}
+
+h2 {
+  text-decoration: underline;
+  text-align: center;
+  color: white;
+}
+
+#profileimage {
+  width: 10em;
+  height: 10em;
+  padding-left: 5.5em;
+  padding-right: 5.5em;
+  position: relative;
+}
+
+.profilepic {
+  width: 2em;
+  height: 2em;
+}
+
+p {
+  color: black;
+  text-decoration: none;
+  font-family: Helvetica, Arial, Verdana;
+  font-weight: bold;
+}
+
+.dropbtn {
+  width: 1.75em;
+  height: 1.75em;
+  padding-left: 0.75em;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #F1F0FF;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-weight: bold;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #FFFFFF
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+#showUpdate {
+  text-align: center;
+}
+
+#search {
+  padding: 6px;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  width: 100px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#search:focus {
+  width: 350px;
+}
+
+#submit_search {
+  outline: none;
+  background-color: #443266;
+  color: white;
+  padding: 6px 6px;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit_search:hover {
+  background-color: #9B30FF;
+}
+
+.Trending2 {
+  text-align: center;
+  color: #C3C3E5;
+  color: #57235b;
+  font-family: Arial, Helvetica, Verdana;
+}
+
+/* footer {
+  float: left;
+  background-color: white;
+  min-height: 5em;
+  min-width: 100%;
+  text-align: center;
+} */

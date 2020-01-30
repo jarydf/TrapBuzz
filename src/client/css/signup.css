@@ -1,0 +1,139 @@
+#left_side {
+  background-color: #443266;
+  float: left;
+  height: 58em;
+  width: 50%;
+  max-height: 60em;
+}
+
+#right_side {
+  background-color: #FFFFFF;
+  height: 58em;
+  border-bottom: 1px solid #F5F5F5;
+  max-height: 60em;
+}
+
+footer {
+  position: relative;
+  text-align: center;
+  font-family: Arial, Helvetica, Verdana;
+  color: gray;
+  top: 2%;
+}
+
+.left_text {
+  position: relative;
+  text-align: center;
+  font-family: Helvetica, Arial, Verdana;
+  color: #FFFFFF;
+  top: 30%;
+}
+
+#logo {
+  position: relative;
+  top: 1em;
+  width: 4em;
+  height: 4em;
+}
+
+#sign_in {
+  text-align: right;
+  padding-top: 0.25em;
+}
+
+.signup_input1 {
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  width: 11.45%;
+}
+
+.signup_input2 {
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  width: 25%;
+}
+
+#submit_2 {
+  width: 25%;
+  background-color: #443266;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit_2:hover {
+  background-color: #F1F0FF;
+  color: black;
+  border: 1px solid #FFFFFF;
+}
+
+section {
+  position: relative;
+  font-family: Helvetica, Arial, Verdana;
+  text-align: center;
+  top: 20%;
+}
+
+#sneak {
+  font-size: 0.55em;
+  font-family: Verdana, Helvetica, Arial;
+  position: relative;
+  text-align: center;
+  top: 20%;
+}
+
+#top_right {
+  font-size: 0.6em;
+  font-family: Verdana, Helvetica, Arial;
+  display: inline;
+}
+
+.signin_input {
+  padding: 0.25em;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+}
+
+#submit_1 {
+  background-color: #443266;
+  color: white;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 5em;
+  padding: 0.25em;
+}
+
+#submit_1:hover {
+  background-color: #F1F0FF;
+  color: black;
+  border: 1px solid #FFFFFF;
+}
+
+#recovery_link {
+  display: block;
+  font-size: 0.6em;
+  font-family: Verdana, Helvetica, Arial;
+  padding-right: 10.5em;
+  text-decoration: none;
+}
+
+a:link {
+  color: grey;
+}
+
+a:hover {
+  color: blue;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}

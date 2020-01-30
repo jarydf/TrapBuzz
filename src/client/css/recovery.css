@@ -1,0 +1,52 @@
+#logo {
+  width: 2em;
+  height: 2em;
+}
+
+p {
+  position: relative;
+  display: inline;
+  bottom: 0.65em;
+  font-family: Helvetica, Arial, Verdana;
+  font-weight: bold;
+  color: black;
+}
+
+#password_recover {
+  text-align: center;
+  font-family: Helvetica, Arial, Verdana;
+  color: black;
+}
+
+header {
+  border-bottom: 1px solid #D8D8D8;
+  margin: 0.5em
+}
+
+#email_recovery {
+  padding: 0.75em;
+  border: 1px solid #DCDCDC;
+  border-radius: 10px;
+  width: 25%;
+  outline: none;
+}
+
+input:focus {
+  background-color: #FFFFC4;
+}
+
+#submit_recover {
+  background-color: #443266;
+  color: white;
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 5em;
+  padding: 0.35em;
+}
+
+#submit_recover:hover {
+  background-color: #F1F0FF;
+  color: black;
+  border: 1px solid #FFFFFF;
+}
