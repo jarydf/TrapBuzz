@@ -12,18 +12,18 @@ $result = mysqli_query($conn, $sql) or die("error query");
 $resultCheck = mysqli_num_rows($result);
 
 if ($resultCheck < 1) {
-    header("Location: ../admin_signin.php?login=error1");
+    header("Location: admin_signin.php?login=error1");
   exit();
 }else{
 if ($row = mysqli_fetch_assoc($result)){
   if(strcmp($apwd, $row['passwordAdmin']) != 0){
-    header("Location: ../admin_signin.php?login=error2");
+    header("Location: admin_signin.php?login=error2");
     exit();
   }elseif (strcmp($apwd, $row['passwordAdmin']) == 0) {
 
   // user password was succesful. Saving session variables
   $_SESSION['a_id'] = $row['userAdmin'];
-  header("Location: ../admin.php");
+  header("Location: admin.php");
   exit();
     }
   }
@@ -32,7 +32,7 @@ if ($row = mysqli_fetch_assoc($result)){
 }
 
 else{
-    header("Location: ../admin_signin.php?login=error3");
+    header("Location: admin_signin.php?login=error3");
   exit();
 }
 

@@ -20,18 +20,18 @@ if(isset($_SESSION['u_id'])){
        $id = $_SESSION['u_id'];
      }
        echo'<div class="post">
-       <form method = "post" action = "include/deletePost.php">
+       <form method = "post" action = "deletePost.php">
      <input input id = "submitComment" type="submit" name="delete_blog" value="Delete Post">
       <input type="hidden" name= "blog_id" value='.$param7.'>
      </form>
          <h3 style = " border-bottom: 1px solid black;" id = "blog_title">'.$param1.'</h3>
-         <p> <a href="userprofile.php?username='.$param2.'"> <img class = "profilepic" src="../client/images\005-man-user.svg" alt="Profile"/></a> by ' .$param2. ' on ' .$param3. ' at ' .$param4.'</p>
+         <p> <a href="userprofile.php?username='.$param2.'"> <img class = "profilepic" src="005-man-user.svg" alt="Profile"/></a> by ' .$param2. ' on ' .$param3. ' at ' .$param4.'</p>
         <img id = "blog_pic" src="data:image/png;base64, '.base64_encode($param6).'" alt="Profile"/>         <p>'.$param5.' </p>
         <div class="numOfLikes"></div>Likes <p class="blogIdlike" style="display: none">'.$param7.'</p>
       </div>
       <div class="comments">
-       <a class="newlike" href="include/newLikePost.php" id="'.$param7.'"><img src="../client/images\002-thumbs-up-hand-symbol.svg" class="candl"/></a>
-       <form id="'.$param7.'"class="comment-form" method="post" action="include/insertComments.php">
+       <a class="newlike" href="newLikePost.php" id="'.$param7.'"><img src="002-thumbs-up-hand-symbol.svg" class="candl"/></a>
+       <form id="'.$param7.'"class="comment-form" method="post" action="insertComments.php">
          <p class="blogId" style="display: none">'.$param7.'</p>
          <p style = "text-align: left;"> Comment Section <p>
          <textarea id="'.$param7.'" type="text" class="commentContent" placeholder="Add a Comment"></textarea>
@@ -46,7 +46,7 @@ if(isset($_SESSION['u_id'])){
           }
         function query_all()
               {
-                include'include/connection.php';
+                include'connection.php';
                 if(isset($_SESSION['u_id'])){
                    $id = $_SESSION['u_id'];
                    $fname = $_SESSION['u_first'];
@@ -65,7 +65,7 @@ if(isset($_SESSION['u_id'])){
               }
               function query_aboutMe()
                     {
-                      include'include/connection.php';
+                      include'connection.php';
                       if(isset($_SESSION['u_id'])){
                          $id = $_SESSION['u_id'];
                          $aboutMe=$_SESSION['aboutMe'];
@@ -82,7 +82,7 @@ if(isset($_SESSION['u_id'])){
 
               function display_ProfilePic(){
 
-                include'include/connection.php';
+                include'connection.php';
                 if(isset($_SESSION['u_id'])){
                    $id = $_SESSION['u_id'];
                   if ($conn->connect_error) {
@@ -96,7 +96,7 @@ if(isset($_SESSION['u_id'])){
                 }
               }
               function query_search($search){
-                include'include/connection.php';
+                include'connection.php';
                   if ($conn->connect_error) {
                       die("Connection failed:" . $conn->connect_error);
                   }
@@ -117,21 +117,21 @@ if(isset($_SESSION['u_id'])){
 <head lang="en">
   <meta charset="utf-8">
   <title>TrapBuzz - Home</title>
-  <link rel="logo icon" href="../client/images/TrapBuzz_icon.ico" />
-  <link rel="stylesheet" href="../client/css/reset.css">
-  <link rel="stylesheet" href="../client/css/home.css">
-  <link rel="stylesheet" href="../client/css/styling1.css">
-  <link rel="stylesheet" href="../client/css/Profile.css">
+  <link rel="logo icon" href="TrapBuzz_icon.ico" />
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="styling1.css">
+  <link rel="stylesheet" href="Profile.css">
 
-  <script type="text/javascript" src="../client/javascript/dropdown.js"></script>
-  <script type="text/javascript" src="../client/javascript/validation.js"></script>
-  <script type="text/javascript" src="../client/javascript/Profile.js"></script>
+  <script type="text/javascript" src="dropdown.js"></script>
+  <script type="text/javascript" src="validation.js"></script>
+  <script type="text/javascript" src="Profile.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src = "../client/javascript/jquery-3.1.1.min.js"></script>
+  <script src = "jquery-3.1.1.min.js"></script>
 </head>
 <body>
   <header>
-    <a href="Home.php" title="Home"> <img class = "icons" id = "logo" src="../client/images/TrapBuzz.png" alt="logo"></a>
+    <a href="Home.php" title="Home"> <img class = "icons" id = "logo" src="TrapBuzz.png" alt="logo"></a>
     <form method="get" name="header_search" action="Home-search.php" onsubmit="return validateSearch()">
       <input id="search" type="search" name="searchbtn" placeholder="Search">
       <input id="submit_search" type="submit" name="submit_search1" value="Search">
@@ -140,30 +140,30 @@ if(isset($_SESSION['u_id'])){
       <ul>
         <li> <?php if(isset($_SESSION['u_id'])){ echo "Logged in: ". $fname; }
           ?> </li>
-        <li><a href="Home.php"> <img class = "icons" src="../client/images\006-home-page.svg" title="Home" alt="Home"/></a></li>
+        <li><a href="Home.php"> <img class = "icons" src="006-home-page.svg" title="Home" alt="Home"/></a></li>
 
         <div class="dropdown">
-          <img onclick="myFunction()" class="dropbtn" title="Menu" src="../client/images/menu.svg">
+          <img onclick="myFunction()" class="dropbtn" title="Menu" src="menu.svg">
           <div id="myDropdown" class="dropdown-content">
 
             <?php if (isset($_SESSION['u_id'])){
-                echo '<form action = "include/logout-inc.php" method="post">
+                echo '<form action = "logout-inc.php" method="post">
                 <button type = "submit" name="submit" class ="btn_nav" >Log out</button>
                   </form>';
           }else{
-          echo '  <form action = "include/logout-inc.php" method="post">
+          echo '  <form action = "logout-inc.php" method="post">
               <button type = "submit" name="submit" class ="btn_nav" >Log in</button>
             </form>';
               }
               ?>
           </div>
         </div>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="../client/images\005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
-          echo '<img onclick="on()" class = "icons" src="../client/images\005-man-user.svg" title="Profile" alt="Profile"/>';
+        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
+          echo '<img onclick="on()" class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/>';
         }?></li>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="../client/images\004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
+        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
         else{
-          echo '<img onclick="on()" class = "icons" src="../client/images\004-pencil-edit-button.svg" title="New Post" alt="New post"/>';
+          echo '<img onclick="on()" class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/>';
         }?></li>
       </ul>
     </nav>
@@ -214,14 +214,14 @@ if(isset($_SESSION['u_id'])){
             if($row['profilePic'] != NULL) {
               echo '<p><img id="profileimage" src="data:image/png;base64, '.base64_encode($row['profilePic']).'" alt="Profile Picture" /></p>';
             }else{
-             echo '<p><img id="profileimage" src="../client/images\blankprofile.png" alt="Profile" /></p>';
+             echo '<p><img id="profileimage" src="blankprofile.png" alt="Profile" /></p>';
          }
 
          ?>
 
 
         <p id="changeProfilePicture">Change profile picture  </p>
-        <form id="profileimage"  method="post" action="include/changePic-inc.php" enctype="multipart/form-data">
+        <form id="profileimage"  method="post" action="changePic-inc.php" enctype="multipart/form-data">
                 <input onchange="this.form.submit()" type="file" name="profileimg" accept=".jpeg, .jpg, .png">
                 <br>
                 <input type="hidden" name="P_submit" value="Change">
@@ -246,8 +246,8 @@ if (isset($_SESSION['u_id'])){
     <div id="overlay" onclick="off()">
     <div id="text">Oops! You're not logged in.</div>
    </div>
-   <script type="text/javascript" src="../client/javascript/ajax.js"></script>
-   <script type="text/javascript" src="../client/javascript/ajaxLikes.js"></script>
+   <script type="text/javascript" src="ajax.js"></script>
+   <script type="text/javascript" src="ajaxLikes.js"></script>
 
 </body>
 

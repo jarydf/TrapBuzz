@@ -8,7 +8,7 @@ if(isset($_SESSION['u_id'])){
    $aboutMe=$_SESSION['aboutMe'];
  }
  else {
-   header("Location: ../signup.php");
+   header("Location: signup.php");
    exit();
  }
 
@@ -19,21 +19,21 @@ if(isset($_SESSION['u_id'])){
 <head lang="en">
   <meta charset="utf-8">
   <title>TrapBuzz - New Post</title>
-  <link rel="logo icon" href="../client/images/TrapBuzz_icon.ico" />
-  <link rel="stylesheet" href="../client/css/reset.css">
-  <link rel="stylesheet" href="../client/css/home.css">
-  <link rel="stylesheet" href="../client/css/styling1.css">
-  <link rel="stylesheet" href="../client/css/Profile.css">
-  <script type="text/javascript" src="../client/javascript/dropdown.js"></script>
-  <script type="text/javascript" src="../client/javascript/validation.js"></script>
-  <script type="text/javascript" src="../client/javascript/Profile.js"></script>
+  <link rel="logo icon" href="TrapBuzz_icon.ico" />
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="styling1.css">
+  <link rel="stylesheet" href="Profile.css">
+  <script type="text/javascript" src="dropdown.js"></script>
+  <script type="text/javascript" src="validation.js"></script>
+  <script type="text/javascript" src="Profile.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src = "../client/javascript/jquery-3.1.1.min.js"></script>
+  <script src = "jquery-3.1.1.min.js"></script>
 </head>
 
 <body>
   <header>
-    <a href="Home.php" title="Home"> <img class = "icons" id = "logo" src="../client/images/TrapBuzz.png" alt="logo"></a>
+    <a href="Home.php" title="Home"> <img class = "icons" id = "logo" src="TrapBuzz.png" alt="logo"></a>
     <form method="get" name="header_search" action="http://www.randyconnolly.com/tests/process.php" onsubmit="return validateSearch()">
       <input id="search" type="search" name="searchbtn" placeholder="Search">
       <input id="submit_search" type="submit" name="submit_search1" value="Search">
@@ -42,36 +42,36 @@ if(isset($_SESSION['u_id'])){
       <ul>
         <li> <?php if(isset($_SESSION['u_id'])){ echo "Logged in: ". $fname; }
           ?> </li>
-        <li><a href="Home.php"> <img class = "icons" src="../client/images\006-home-page.svg" title="Home" alt="Home"/></a></li>
+        <li><a href="Home.php"> <img class = "icons" src="006-home-page.svg" title="Home" alt="Home"/></a></li>
         <div class="dropdown">
-          <img onclick="myFunction()" class="dropbtn" title="Menu" src="../client/images/menu.svg">
+          <img onclick="myFunction()" class="dropbtn" title="Menu" src="menu.svg">
           <div id="myDropdown" class="dropdown-content">
 
             <?php if (isset($_SESSION['u_id'])){
-                echo '<form action = "include/logout-inc.php" method="post">
+                echo '<form action = "logout-inc.php" method="post">
                 <button type = "submit" name="submit" class ="btn_nav" >Log out</button>
                   </form>';
           }else{
-          echo '  <form action = "include/logout-inc.php" method="post">
+          echo '  <form action = "logout-inc.php" method="post">
               <button type = "submit" name="submit" class ="btn_nav" >Log in</button>
             </form>';
               }
               ?>
           </div>
         </div>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="../client/images\005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
-          echo '<img onclick="on()" class = "icons" src="../client/images\005-man-user.svg" title="Profile" alt="Profile"/>';
+        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
+          echo '<img onclick="on()" class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/>';
         }?></li>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="../client/images\004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
+        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
         else{
-          echo '<img onclick="on()" class = "icons" src="../client/images\004-pencil-edit-button.svg" title="New Post" alt="New post"/>';
+          echo '<img onclick="on()" class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/>';
         }?></li>
       </ul>
 
     </nav>
   </header>
 
-  <form id="editProfile" method="post" action="include/editProfile-inc.php" enctype="multipart/form-data">
+  <form id="editProfile" method="post" action="editProfile-inc.php" enctype="multipart/form-data">
     <fieldset>
       <legend id="post_title">Edit Profile</legend>
       <br>

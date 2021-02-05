@@ -11,7 +11,7 @@ if (isset($_POST['P_submit'])) {
   $pPic = file_get_contents($file);
 
 if($file == NULL){
-    header("Location: ../Profile.php?fieldsleftblank");
+    header("Location: Profile.php?fieldsleftblank");
     exit();
 }else{
 
@@ -21,7 +21,7 @@ if($file == NULL){
                  $sql->bind_param("bs",$null, $id);
                  $sql->send_long_data(0,$pPic);
                  $sql->execute();
-                header("Location: ../Profile.php");
+                header("Location: Profile.php");
                } else {
                    $error = $conn->errno . ' ' . $conn->error;
                    echo $error;
@@ -29,7 +29,7 @@ if($file == NULL){
 
 }
 }else{
-  header("Location: ../Profile.php?3");
+  header("Location: Profile.php?3");
   exit();
 }
 

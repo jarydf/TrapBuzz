@@ -11,7 +11,7 @@ if(isset($_SESSION['u_id'])){
   $password=$result;
 }
 else {
-  header("Location: ../signup.php");
+  header("Location: signup.php");
   exit();
 }
   if (isset($_POST['submitEditProfile'])) {
@@ -52,12 +52,12 @@ else {
                      $_SESSION['u_last'] = $lName;
                      $_SESSION['u_email'] = $email;
                      $_SESSION['aboutMe']=$aboutMe;
-                 header("Location: ../Profile.php");
+                 header("Location: Profile.php");
                  exit();
                }
 }
   else{
-    header("Location: ../editProfile.php");
+    header("Location: editProfile.php");
     exit();
   }
   ?>

@@ -18,13 +18,13 @@ if($resultCheck > 0){
           $txt = "A password reset request was sent to this email. Your new password is: ".$pwd. " \nTo sign in with your new password head to http://cosc360.ok.ubc.ca/44790153/src/server/signup.php \n - The TrapBuzz team!";
           $headers = "From: noman0786@hotmail.com" . "\r\n";
           mail($to, $subject, $txt, $headers);
-          header("Location: ../resetSuccess.php");
+          header("Location: resetSuccess.php");
 
 
 
 }
 else{
-header("Location: ../recovery.php?error=$recoverEmail");
+header("Location: recovery.php?error=$recoverEmail");
 }
 
 }

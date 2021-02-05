@@ -20,19 +20,19 @@ $stmt = "DELETE FROM blogPost WHERE blogId = ?";
   <head lang="en">
     <meta charset="utf-8">
     <title>Admin - Delete Post</title>
-    <link rel="logo icon" href="../../client/images/TrapBuzz_icon.ico" />
-    <link rel="stylesheet" href="../../client/css/reset.css">
-    <link rel="stylesheet" href="../../client/css/recovery.css">
+    <link rel="logo icon" href="TrapBuzz_icon.ico" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="recovery.css">
   </head>
 
   <body>
     <header>
-       <img class = "icons" id = "logo" src="../../client/images/TrapBuzz.png" alt="logo">
+       <img class = "icons" id = "logo" src="TrapBuzz.png" alt="logo">
       <p>Admin - Post Deleted</p>
     </header>
     <div id="password_recover">
       <?php
-      echo "<h1>You have successfully deleted the blog post. <a href=\"../admin.php\"> Back to the admin page. </a> </h1>";
+      echo "<h1>You have successfully deleted the blog post. <a href=\"admin.php\"> Back to the admin page. </a> </h1>";
        ?>
     </div>
   </body>

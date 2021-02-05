@@ -12,7 +12,7 @@ $result = mysqli_query($conn, $sql) or die("error query");
 $resultCheck = mysqli_num_rows($result);
 
 if ($resultCheck < 1) {
-    header("Location: ../signup.php?login=error");
+    header("Location: signup.php?login=error");
   exit();
 }else{
 if ($row = mysqli_fetch_assoc($result)){
@@ -20,7 +20,7 @@ if ($row = mysqli_fetch_assoc($result)){
   $saltedPwd = $pwd.$salt;
   $hashedPwd = hash('sha256',$saltedPwd);
   if(strcmp($hashedPwd, $row['password']) != 0){
-    header("Location: ../signup.php?login=error");
+    header("Location: signup.php?login=error");
     exit();
   }
   elseif (strcmp($hashedPwd, $row['password']) == 0) {
@@ -31,7 +31,7 @@ if ($row = mysqli_fetch_assoc($result)){
   $_SESSION['u_last'] = $row['lastName'];
   $_SESSION['u_email'] = $row['email'];
   $_SESSION['aboutMe']=$row['aboutMe'];
-  header("Location: ../Home.php");
+  header("Location: Home.php");
   exit();
     }
   }
@@ -40,7 +40,7 @@ if ($row = mysqli_fetch_assoc($result)){
 }
 
 else{
-  header("Location: ../signup.php?login=error");
+  header("Location: signup.php?login=error");
   exit();
 }
 

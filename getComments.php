@@ -28,7 +28,7 @@ mysqli_close($conn);
 }
 }
 else{
-    header("Location: ../signup.php");
+    header("Location: signup.php");
     exit();
 }
 ?>

@@ -27,7 +27,7 @@ if(isset($_SESSION['u_id'])){
                echo $error;
              }}}}
 else{
-    header("Location: ../signup.php");
+    header("Location: signup.php");
     exit();
 
 }

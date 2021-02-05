@@ -11,7 +11,7 @@ if (isset($_POST['comment_submit'])) {
   $blogId=$_POST['blogId'];
 
 if(empty($cContent)){
-    header("Location: ../Comments.php?fieldsleftblank");
+    header("Location: Comments.php?fieldsleftblank");
     exit();
 }else{
 $stmt = "INSERT INTO Comment(commentId, commentContent, commentDate,userName,blogId) VALUES (?,?,?,?,?)";
@@ -24,11 +24,11 @@ $stmt = "INSERT INTO Comment(commentId, commentContent, commentDate,userName,blo
                    $error = $conn->errno . ' ' . $conn->error;
                    echo $error;
                }
-               header("Location: ../Home.php");
+               header("Location: Home.php");
 }
 
 }else{
-  header("Location: ../Home.php");
+  header("Location: Home.php");
   exit();
 }
 

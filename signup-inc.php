@@ -15,10 +15,10 @@ $resultCheck = mysqli_num_rows($result);
 
 if($resultCheck > 0){
   $name_error = "User name is taken";
-  header("Location: ../signup.php?signup=useroremailtaken");
+  header("Location: signup.php?signup=useroremailtaken");
 }else{
   if(empty($fName) || empty($lName) || empty($userId) || empty($email) || empty($pwd)){
-      header("Location: ../signup.php?fieldsleftblank");
+      header("Location: signup.php?fieldsleftblank");
       exit();
   }else{
   $salt = 'efhsdufjhdsfjksfh';
@@ -37,7 +37,7 @@ if($resultCheck > 0){
 }}
 
 }else{
-  header("Location: ../signup.php");
+  header("Location: signup.php");
   exit();
 }
 

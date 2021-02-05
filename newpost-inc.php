@@ -19,7 +19,7 @@ else{
     $bType = 'Other';
 }
 if(empty($bTitle) || empty($bContent) || isset($_POST["types"]) == false || $file == NULL){
-    header("Location: ../BlogPost.php?fieldsleftblank");
+    header("Location: BlogPost.php?fieldsleftblank");
     exit();
 }else{
 
@@ -35,11 +35,11 @@ $stmt = "INSERT INTO blogPost(blogTitle, blogContent, blogDate, blogType, blogPi
                    $error = $conn->errno . ' ' . $conn->error;
                    echo $error;
                }
-               header("Location: ../Home.php");
+               header("Location: Home.php");
 }
 
 }else{
-  header("Location: ../BlogPost.php");
+  header("Location: BlogPost.php");
   exit();
 }
 

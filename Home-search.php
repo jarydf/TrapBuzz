@@ -15,16 +15,16 @@ date_default_timezone_set('Canada/Pacific');
    if(isset($_SESSION['u_id'])){
    echo'<a href="userprofile.php?username='.$param2.'"><div class="post">
      <h3 style = " border-bottom: 1px solid black;" id = "blog_title">'.$param1.'</h3>
-     <p> <img class = "profilepic" src="../client/images\005-man-user.svg" alt="Profile"/> by ' .$param2. ' on ' .$param3. ' at ' .$param4.'</p>
+     <p> <img class = "profilepic" src="005-man-user.svg" alt="Profile"/> by ' .$param2. ' on ' .$param3. ' at ' .$param4.'</p>
      <img id = "blog_pic" src="data:image/png;base64, '.base64_encode($param6).'" alt="Profile"/>
      <p>'.$param5.' </p>
      <div class="numOfLikes"></div>Likes <p class="blogIdlike" style="display: none">'.$param7.'</p>
    </div>
 
    <div class="comments">
-    <a class="newlike" href="include/newLikePost.php" id="'.$param7.'"><img src="../client/images\002-thumbs-up-hand-symbol.svg" class="candl"/>
+    <a class="newlike" href="newLikePost.php" id="'.$param7.'"><img src="002-thumbs-up-hand-symbol.svg" class="candl"/>
     </a>
-    <form id="'.$param7.'"class="comment-form" method="post" action="include/insertComments.php">
+    <form id="'.$param7.'"class="comment-form" method="post" action="insertComments.php">
       <p class="blogId" style="display: none">'.$param7.'</p>
       <p style = "text-align: left;"> Comment Section <p>
       <textarea id="'.$param7.'" type="text" class="commentContent" placeholder="Add a Comment"></textarea>
@@ -41,12 +41,12 @@ date_default_timezone_set('Canada/Pacific');
 }else{
   echo'<div class="post">
     <h3 style = " border-bottom: 1px solid black;" id = "blog_title">'.$param1.'</h3>
-    <p> <a href="Profile-noaccess.php"> <img class = "profilepic" src="../client/images\005-man-user.svg" alt="Profile"/></a> by ' .$param2. ' on ' .$param3. ' at ' .$param4.'</p>
+    <p> <a href="Profile-noaccess.php"> <img class = "profilepic" src="005-man-user.svg" alt="Profile"/></a> by ' .$param2. ' on ' .$param3. ' at ' .$param4.'</p>
   <img id = "blog_pic" src="data:image/png;base64, '.base64_encode($param6).'" alt="Profile"/>
     <p>'.$param5.' </p>
   </div>
   <div class="comments">
-  <a href="#"><img onclick="on()" src="../client/images\002-thumbs-up-hand-symbol.svg" class="candl"/></a>
+  <a href="#"><img onclick="on()" src="002-thumbs-up-hand-symbol.svg" class="candl"/></a>
     <p>Log in to view comments!</p>
   </div>
  <hr>';
@@ -55,7 +55,7 @@ date_default_timezone_set('Canada/Pacific');
 
   function query_all()
         {
-          include'include/connection.php';
+          include'connection.php';
             if ($conn->connect_error) {
                 die("Connection failed:" . $conn->connect_error);
             }
@@ -67,7 +67,7 @@ date_default_timezone_set('Canada/Pacific');
         }
 
       function query_blogLikes($param7){
-        include'include/connection.php';
+        include'connection.php';
           if ($conn->connect_error) {
               die("Connection failed:" . $conn->connect_error);
           }
@@ -77,7 +77,7 @@ date_default_timezone_set('Canada/Pacific');
             return $count['numOfLikes'];
       }
       function trending_posts(){
-        include'include/connection.php';
+        include'connection.php';
           if ($conn->connect_error) {
               die("Connection failed:" . $conn->connect_error);
           }
@@ -87,7 +87,7 @@ date_default_timezone_set('Canada/Pacific');
             return $result;
       }
       function query_search($search){
-        include'include/connection.php';
+        include'connection.php';
           if ($conn->connect_error) {
               die("Connection failed:" . $conn->connect_error);
           }
@@ -107,20 +107,20 @@ date_default_timezone_set('Canada/Pacific');
 <head lang="en">
   <meta charset="utf-8">
   <title>TrapBuzz - Home</title>
-  <link rel="logo icon" href="../client/images/TrapBuzz_icon.ico" />
-  <link rel="stylesheet" href="../client/css/reset.css">
-  <link rel="stylesheet" href="../client/css/home.css">
-  <link rel="stylesheet" href="../client/css/styling1.css">
-  <link rel="stylesheet" href="../client/css/Profile.css">
-  <script type="text/javascript" src="../client/javascript/dropdown.js"></script>
-  <script type="text/javascript" src="../client/javascript/validation.js"></script>
-  <script type="text/javascript" src="../client/javascript/Profile.js"></script>
+  <link rel="logo icon" href="TrapBuzz_icon.ico" />
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="styling1.css">
+  <link rel="stylesheet" href="Profile.css">
+  <script type="text/javascript" src="dropdown.js"></script>
+  <script type="text/javascript" src="validation.js"></script>
+  <script type="text/javascript" src="Profile.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src = "../client/javascript/jquery-3.1.1.min.js"></script>
+  <script src = "jquery-3.1.1.min.js"></script>
 </head>
 <body>
   <header>
-    <a href="Home.php" title="Home"> <img class = "icons" id = "logo" src="../client/images/TrapBuzz.png" alt="logo"></a>
+    <a href="Home.php" title="Home"> <img class = "icons" id = "logo" src="TrapBuzz.png" alt="logo"></a>
     <form method="get" name="header_search" action="Home-search.php" onsubmit="return validateSearch()">
       <input id="search" type="search" name="searchbtn" placeholder="Search">
       <input id="submit_search" type="submit" name="submit_search1" value="Search">
@@ -129,30 +129,30 @@ date_default_timezone_set('Canada/Pacific');
       <ul>
         <li> <?php if(isset($_SESSION['u_id'])){ echo "Logged in: ". $fname; }
           ?> </li>
-        <li><a href="Home.php"> <img class = "icons" src="../client/images\006-home-page.svg" title="Home" alt="Home"/></a></li>
+        <li><a href="Home.php"> <img class = "icons" src="006-home-page.svg" title="Home" alt="Home"/></a></li>
 
         <div class="dropdown">
-          <img onclick="myFunction()" class="dropbtn" title="Menu" src="../client/images/menu.svg">
+          <img onclick="myFunction()" class="dropbtn" title="Menu" src="menu.svg">
           <div id="myDropdown" class="dropdown-content">
 
             <?php if (isset($_SESSION['u_id'])){
-                echo '<form action = "include/logout-inc.php" method="post">
+                echo '<form action = "logout-inc.php" method="post">
                 <button type = "submit" name="submit" class ="btn_nav" >Log out</button>
                   </form>';
           }else{
-          echo '  <form action = "include/logout-inc.php" method="post">
+          echo '  <form action = "logout-inc.php" method="post">
               <button type = "submit" name="submit" class ="btn_nav" >Log in</button>
             </form>';
               }
               ?>
           </div>
         </div>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="../client/images\005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
-          echo '<img onclick="on()" class = "icons" src="../client/images\005-man-user.svg" title="Profile" alt="Profile"/>';
+        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
+          echo '<img onclick="on()" class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/>';
         }?></li>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="../client/images\004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
+        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
         else{
-          echo '<img onclick="on()" class = "icons" src="../client/images\004-pencil-edit-button.svg" title="New Post" alt="New post"/>';
+          echo '<img onclick="on()" class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/>';
         }?></li>
       </ul>
     </nav>
@@ -208,7 +208,7 @@ else {
 <?php
 function displayContent_trending($param1, $param2,$param3,$param4,$param5){
 echo'
-      <p> <a href=hotPost-inc.php?blogId='.$param5.'> <img class = "hotprofilepic" src="../client/images\005-man-user.svg" alt="Profile"/> by '.$param1.' on<time datetime="'.
+      <p> <a href=hotPost-inc.php?blogId='.$param5.'> <img class = "hotprofilepic" src="005-man-user.svg" alt="Profile"/> by '.$param1.' on<time datetime="'.
       $param4.'"> '.$param2.'</time> at '.$param3.' </a> </p>';
     }
     $result2 = trending_posts();
@@ -216,7 +216,7 @@ echo'
      if ($resultCheck2 > 0) {
          while ($row = mysqli_fetch_assoc($result2)) {
            $sqldate="SELECT * FROM blogPost WHERE blogId=".$row['blogId'].";";
-           include'include/connection.php';
+           include'connection.php';
            $resultdate = mysqli_query($conn, $sqldate);
            while ($rowdate = mysqli_fetch_assoc($resultdate)){
            displayContent_trending($row['userName'],date('Y-m-d', strtotime($rowdate['blogDate'])), date('h:i a' , strtotime($rowdate['blogDate'])),$rowdate['blogDate'],$row['blogId']);
@@ -241,8 +241,8 @@ echo'
   <div id="overlay" onclick="off()">
   <div id="text">Oops! You're not logged in.</div>
  </div>
- <script type="text/javascript" src="../client/javascript/ajax.js"></script>
- <script type="text/javascript" src="../client/javascript/ajaxLikes.js"></script>
+ <script type="text/javascript" src="ajax.js"></script>
+ <script type="text/javascript" src="ajaxLikes.js"></script>
 </body>
 
 
