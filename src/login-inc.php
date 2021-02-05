@@ -22,7 +22,8 @@ if ($row = mysqli_fetch_assoc($result)){
   if(strcmp($hashedPwd, $row['password']) != 0){
     header("Location: ../signup.php?login=error");
     exit();
-  }elseif (strcmp($hashedPwd, $row['password']) == 0) {
+  }
+  elseif (strcmp($hashedPwd, $row['password']) == 0) {
 
   // user password was succesful. Saving session variables
   $_SESSION['u_id'] = $row['userName'];
