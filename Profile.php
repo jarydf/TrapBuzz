@@ -114,39 +114,43 @@ if(isset($_SESSION['u_id'])){
 ?>
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
-  <meta charset="utf-8">
-  <title>TrapBuzz - Home</title>
-  <link rel="logo icon" href="TrapBuzz_icon.ico" />
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="styling1.css">
-  <link rel="stylesheet" href="Profile.css">
+    <meta charset="utf-8">
+    <title>TrapBuzz - Home</title>
+    <link rel="logo icon" href="TrapBuzz_icon.ico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styling1.css">
+    <link rel="stylesheet" href="Profile.css">
 
-  <script type="text/javascript" src="dropdown.js"></script>
-  <script type="text/javascript" src="validation.js"></script>
-  <script type="text/javascript" src="Profile.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src = "jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="dropdown.js"></script>
+    <script type="text/javascript" src="validation.js"></script>
+    <script type="text/javascript" src="Profile.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="jquery-3.1.1.min.js"></script>
 </head>
+
 <body>
-  <header>
-    <a href="Home.php" title="Home"> <img class = "icons" id = "logo" src="TrapBuzz.png" alt="logo"></a>
-    <form method="get" name="header_search" action="Home-search.php" onsubmit="return validateSearch()">
-      <input id="search" type="search" name="searchbtn" placeholder="Search">
-      <input id="submit_search" type="submit" name="submit_search1" value="Search">
-    </form>
-    <nav>
-      <ul>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo "Logged in: ". $fname; }
+    <header>
+        <a href="Home.php" title="Home"> <img class="icons" id="logo" src="TrapBuzz.png" alt="logo"></a>
+        <form method="get" name="header_search" action="Home-search.php" onsubmit="return validateSearch()">
+            <input id="search" type="search" name="searchbtn" placeholder="Search">
+            <input id="submit_search" type="submit" name="submit_search1" value="Search">
+        </form>
+        <nav>
+            <ul>
+                <li id="name_display"> <?php if(isset($_SESSION['u_id'])){ echo "Logged in: ". $fname; }
           ?> </li>
-        <li><a href="Home.php"> <img class = "icons" src="006-home-page.svg" title="Home" alt="Home"/></a></li>
+                <li><a href="Home.php"> <img class="icons" src="006-home-page.svg" title="Home" alt="Home" /></a></li>
 
-        <div class="dropdown">
-          <img onclick="myFunction()" class="dropbtn" title="Menu" src="menu.svg">
-          <div id="myDropdown" class="dropdown-content">
+                <div class="dropdown">
+                    <img onclick="myFunction()" class="dropbtn" title="Menu" src="menu.svg">
+                    <div id="myDropdown" class="dropdown-content">
 
-            <?php if (isset($_SESSION['u_id'])){
+                        <?php if (isset($_SESSION['u_id'])){
                 echo '<form action = "logout-inc.php" method="post">
                 <button type = "submit" name="submit" class ="btn_nav" >Log out</button>
                   </form>';
@@ -156,23 +160,23 @@ if(isset($_SESSION['u_id'])){
             </form>';
               }
               ?>
-          </div>
-        </div>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
+                    </div>
+                </div>
+                <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
           echo '<img onclick="on()" class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/>';
         }?></li>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
+                <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
         else{
           echo '<img onclick="on()" class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/>';
         }?></li>
-      </ul>
-    </nav>
-  </header>
-  <div id="main">
-    <div id="main_column">
-        <h3 id = "blog_title" style="color: white;"> About Me!</h3>
-        <div style=" background-color: #FFFFFF; height: 5em;">
-          <?php
+            </ul>
+        </nav>
+    </header>
+    <div id="main">
+        <div id="main_column">
+            <h3 id="blog_title" style="color: white;"> About Me!</h3>
+            <div style=" background-color: #FFFFFF; height: 5em;">
+                <?php
           $result = query_aboutMe();
              $resultCheck = mysqli_num_rows($result);
              if ($resultCheck > 0) {
@@ -186,9 +190,9 @@ if(isset($_SESSION['u_id'])){
              echo "<h1> You haven't posted a bio yet!</h1>";
            }
            ?>
-        </div>
-      <h1 style ='border-bottom: 1px solid black;'> Recent Posts </h1>
-      <?php
+            </div>
+            <h1 style='border-bottom: 1px solid black;'> Recent Posts </h1>
+            <?php
       $result = query_all();
          $resultCheck = mysqli_num_rows($result);
          if ($resultCheck > 0) {
@@ -200,13 +204,13 @@ if(isset($_SESSION['u_id'])){
 
        }
        ?>
-     </div>
-    <div id="sidebar_column">
+        </div>
+        <div id="sidebar_column">
 
-      <h1 class ="Trending2">Profile</h1>
-      <div id="first">
+            <h1 class="Trending2">Profile</h1>
+            <div id="first">
 
-        <?php
+                <?php
 
         $result = display_ProfilePic();
            $resultCheck = mysqli_num_rows($result);
@@ -220,34 +224,34 @@ if(isset($_SESSION['u_id'])){
          ?>
 
 
-        <p id="changeProfilePicture">Change profile picture  </p>
-        <form id="profileimage"  method="post" action="changePic-inc.php" enctype="multipart/form-data">
-                <input onchange="this.form.submit()" type="file" name="profileimg" accept=".jpeg, .jpg, .png">
-                <br>
-                <input type="hidden" name="P_submit" value="Change">
+                <p id="changeProfilePicture">Change profile picture </p>
+                <form id="profileimage" method="post" action="changePic-inc.php" enctype="multipart/form-data">
+                    <input onchange="this.form.submit()" type="file" name="profileimg" accept=".jpeg, .jpg, .png">
+                    <br>
+                    <input type="hidden" name="P_submit" value="Change">
 
-        </form>
-      <hr>
-      <div id="profilelinks">
-<?php
+                </form>
+                <hr>
+                <div id="profilelinks">
+                    <?php
 if (isset($_SESSION['u_id'])){
    displayContent_info($id, $fname, $lname, $email);
 }
 ?>
-     </div>
-      <div id="profilelinks">
-          <a href="editProfile.php">
-            <p id = "changep">Edit Profile</p>
-          </a>
-      </div>
-    </div>
-    </div>
+                </div>
+                <div id="profilelinks">
+                    <a href="editProfile.php">
+                        <p id="changep">Edit Profile</p>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-    <div id="overlay" onclick="off()">
-    <div id="text">Oops! You're not logged in.</div>
-   </div>
-   <script type="text/javascript" src="ajax.js"></script>
-   <script type="text/javascript" src="ajaxLikes.js"></script>
+        <div id="overlay" onclick="off()">
+            <div id="text">Oops! You're not logged in.</div>
+        </div>
+        <script type="text/javascript" src="ajax.js"></script>
+        <script type="text/javascript" src="ajaxLikes.js"></script>
 
 </body>
 

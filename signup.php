@@ -4,8 +4,9 @@
 <head lang="en">
     <meta charset="utf-8">
     <title>TrapBuzz. Your words online.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="logo icon" href="TrapBuzz_icon.ico" />
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="signup.css">
     <script type="text/javascript" src="dropdown.js"></script>
     <script type="text/javascript" src="validation.js?n=1"></script>
@@ -37,7 +38,7 @@
                     onsubmit="return validateSignUp()">
                     <input class="signup_input1" type="text" name="Fname" placeholder="First name">
                     <input class="signup_input1" type="text" name="Lname" placeholder="Last name">
-                    <input class="signup_input2" type="text" name="userid" placeholder="Username">
+                    <br />
                     <?php if(isset($name_error)): ?>
                     <script>
                     document.forms["signup"]["userid"].style.borderColor = "red";

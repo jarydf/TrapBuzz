@@ -96,39 +96,43 @@ date_default_timezone_set('Canada/Pacific');
 
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
-  <meta charset="utf-8">
-  <title>TrapBuzz - Home</title>
-  <link rel="logo icon" href="TrapBuzz_icon.ico" />
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="styling1.css">
-  <link rel="stylesheet" href="Profile.css">
-  <script type="text/javascript" src="ajax.js"></script>
-  <script type="text/javascript" src="dropdown.js"></script>
-  <script type="text/javascript" src="validation.js"></script>
-  <script type="text/javascript" src="Profile.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src = "jquery-3.1.1.min.js"></script>
+    <meta charset="utf-8">
+    <title>TrapBuzz - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="logo icon" href="TrapBuzz_icon.ico" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styling1.css">
+    <link rel="stylesheet" href="Profile.css">
+    <script type="text/javascript" src="ajax.js"></script>
+    <script type="text/javascript" src="dropdown.js"></script>
+    <script type="text/javascript" src="validation.js"></script>
+    <script type="text/javascript" src="Profile.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="jquery-3.1.1.min.js"></script>
 </head>
+
 <body>
-  <header>
-    <a href="Home.php" title="Home"> <img class = "icons" id = "logo" src="TrapBuzz.png" alt="logo"></a>
-    <form method="get" name="header_search" action="Home-search.php" onsubmit="return validateSearch()">
-      <input id="search" type="search" name="searchbtn" placeholder="Search">
-      <input id="submit_search" type="submit" name="submit_search1" value="Search">
-    </form>
-    <nav>
-      <ul>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo "Logged in: ". $fname; }
+    <header>
+        <a href="Home.php" title="Home"> <img class="icons" id="logo" src="TrapBuzz.png" alt="logo"></a>
+        <form method="get" name="header_search" action="Home-search.php" onsubmit="return validateSearch()">
+            <input id="search" type="search" name="searchbtn" placeholder="Search">
+            <input id="submit_search" type="submit" name="submit_search1" value="Search">
+        </form>
+        <nav>
+            <ul>
+                <li id="name_display"> <?php if(isset($_SESSION['u_id'])){ echo "Logged in: ". $fname; }
           ?> </li>
-        <li><a href="Home.php"> <img class = "icons" src="006-home-page.svg" title="Home" alt="Home"/></a></li>
+                <li><a href="Home.php"> <img class="icons" src="006-home-page.svg" title="Home" alt="Home" /></a></li>
 
-        <div class="dropdown">
-          <img onclick="myFunction()" class="dropbtn" title="Menu" src="menu.svg">
-          <div id="myDropdown" class="dropdown-content">
+                <div class="dropdown">
+                    <img onclick="myFunction()" class="dropbtn" title="Menu" src="menu.svg">
+                    <div id="myDropdown" class="dropdown-content">
 
-            <?php if (isset($_SESSION['u_id'])){
+                        <?php if (isset($_SESSION['u_id'])){
                 echo '<form action = "logout-inc.php" method="post">
                 <button type = "submit" name="submit" class ="btn_nav" >Log out</button>
                   </form>';
@@ -138,21 +142,21 @@ date_default_timezone_set('Canada/Pacific');
             </form>';
               }
               ?>
-          </div>
-        </div>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
+                    </div>
+                </div>
+                <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="Profile.php"> <img class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/></a>';}else{
           echo '<img onclick="on()" class = "icons" src="005-man-user.svg" title="Profile" alt="Profile"/>';
         }?></li>
-        <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
+                <li> <?php if(isset($_SESSION['u_id'])){ echo'<a href="BlogPost.php"> <img class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/></a>';}
         else{
           echo '<img onclick="on()" class = "icons" src="004-pencil-edit-button.svg" title="New Post" alt="New post"/>';
         }?></li>
-      </ul>
-    </nav>
-  </header>
-  <div id="main">
-    <div id="main_column">
-  <?php
+            </ul>
+        </nav>
+    </header>
+    <div id="main">
+        <div id="main_column">
+            <?php
     $result = query_all();
      $resultCheck = mysqli_num_rows($result);
      if ($resultCheck > 0) {
@@ -165,10 +169,10 @@ date_default_timezone_set('Canada/Pacific');
 
    }
    ?>
-    </div>
-<div id="sidebar_column">
-  <h1 id="Trending">Trending Posts</h1>
-<?php
+        </div>
+        <div id="sidebar_column">
+            <h1 id="Trending">Trending Posts</h1>
+            <?php
 function displayContent_trending($param1, $param2,$param3,$param4,$param5){
 echo'
       <p> <a href=hotPost-inc.php?blogId='.$param5.'&userName='.$param1.'> <img class = "hotprofilepic" src="005-man-user.svg" alt="Profile"/> by '.$param1.' on<time datetime="'.
@@ -190,22 +194,22 @@ echo'
          echo "<h4 style ='border-bottom: 1px solid black; text-align: center; color: white;'> No blogs at the moment!</h4>";
      }
 ?>
-      <h1 id="Trending">Categories</h1>
-      <h2><a href = "Home-types.php?type=Entertainment">Entertainment<a></h2>
-      <h2><a href = "Home-types.php?type=Technology">Technology<a></h2>
-      <h2><a href = "Home-types.php?type=Sports">Sports<a></h2>
-      <h2><a href = "Home-types.php?type=Travel">Travel<a></h2>
-      <h2><a href = "Home-types.php?type=Music">Music<a></h2>
-      <h2><a href = "Home-types.php?type=Other">Other<a></h2>
+            <h1 id="Trending">Categories</h1>
+            <h2><a href="Home-types.php?type=Entertainment">Entertainment<a></h2>
+            <h2><a href="Home-types.php?type=Technology">Technology<a></h2>
+            <h2><a href="Home-types.php?type=Sports">Sports<a></h2>
+            <h2><a href="Home-types.php?type=Travel">Travel<a></h2>
+            <h2><a href="Home-types.php?type=Music">Music<a></h2>
+            <h2><a href="Home-types.php?type=Other">Other<a></h2>
 
+        </div>
     </div>
-  </div>
 
-  <div id="overlay" onclick="off()">
-  <div id="text">Oops! You're not logged in.</div>
- </div>
- <script type="text/javascript" src="ajax.js"></script>
- <script type="text/javascript" src="ajaxLikes.js"></script>
+    <div id="overlay" onclick="off()">
+        <div id="text">Oops! You're not logged in.</div>
+    </div>
+    <script type="text/javascript" src="ajax.js"></script>
+    <script type="text/javascript" src="ajaxLikes.js"></script>
 </body>
 
 

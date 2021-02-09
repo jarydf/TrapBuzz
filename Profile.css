@@ -73,10 +73,7 @@ form {
   background-color: #443266;
 }
 
-#logo {
-  position: relative;
-  top: .75em;
-}
+
 
 body {
   background-color: #443266;
@@ -104,9 +101,10 @@ h2 {
 #profileimage {
   width: 10em;
   height: 10em;
-  padding-left: 5.5em;
-  padding-right: 5.5em;
   position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profilepic {
@@ -200,10 +198,11 @@ p {
   font-family: Arial, Helvetica, Verdana;
 }
 
-/* footer {
-  float: left;
-  background-color: white;
-  min-height: 5em;
-  min-width: 100%;
-  text-align: center;
-} */
+*, ::after, ::before {
+  box-sizing: content-box;
+}
+
+#name_display{
+  position: relative;
+  top:0.5em;
+}

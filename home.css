@@ -50,10 +50,7 @@ form {
   top: 5em;
 }
 
-#logo {
-  position: relative;
-  top: .75em;
-}
+
 
 body {
   background-color: #443266;
@@ -263,4 +260,13 @@ textarea {
   color: white;
   border: none;
   font-family: Arial;
+}
+
+*, ::after, ::before {
+  box-sizing: content-box;
+}
+
+#name_display{
+  position: relative;
+  top:0.5em;
 }
