@@ -56,24 +56,6 @@ function validateSignUp() {
 
 }
 
-function validateSignIn() {
-  var userid = document.forms["signin"]["exist_userid"].value;
-  var pass = document.forms["signin"]["exist_pwd"].value;
-  if (userid == "" && pass == "") {
-    return false;
-  } else if (userid == "" || userid.trim() == "") {
-    document.forms["signin"]["exist_userid"].style.borderColor = "red";
-    return false;
-  } else if (pass == "" || pass.trim() == "") {
-    document.forms["signin"]["exist_pwd"].style.borderColor = "red";
-    return false;
-  } else if (pass.length < 4) {
-    document.forms["signin"]["exist_pwd"].style.borderColor = "red";
-    return false;
-  }
-}
-
-
 function validateSearch() {
   var search = document.forms["header_search"]["searchbtn"].value;
   if (search == "" || search.trim() == "") {

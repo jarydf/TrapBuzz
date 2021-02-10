@@ -2,7 +2,8 @@ $(document).ready(function () {
   $(".comment-form").on("submit", function (event) {
     event.preventDefault();
     var commentContent = $(this).find(".commentContent").val();
-    commentContent = jQuery.trim(commentContent);
+    $(this).find(".commentContent").val("");
+    commentContent = $.trim(commentContent);
     var blogId = $(this).find(".blogId").html();
     if (commentContent == "") {
       alert("empty field");

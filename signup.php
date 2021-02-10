@@ -22,7 +22,7 @@
                             <h1 class="left_text"> Grow. <h1>
         </div>
         <div id="right_side">
-            <form id="sign_in" name="signin" method="post" action="login-inc.php" onsubmit="return validateSignIn()">
+            <form id="sign_in" name="signin" method="post" action="login-inc.php">
                 <p id="top_right"> Sign in here: </p>
                 <input class="signin_input" type="text" name="exist_userid" placeholder="Username" id="login_username">
                 <input class="signin_input" type="password" name="exist_pwd" placeholder="Password" id="login_password">
