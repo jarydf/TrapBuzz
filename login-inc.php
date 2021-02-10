@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_POST['signin'])) {
+if (isset($_POST['exist_userid']) && isset($_POST['exist_pwd'])) {
 include_once "connection.php";
 
 $uid = mysqli_real_escape_string($conn,$_POST['exist_userid']);
@@ -11,8 +11,8 @@ $sql = "SELECT userName, firstName, lastName, email, password,aboutMe FROM Users
 $result = mysqli_query($conn, $sql) or die("error query");
 $resultCheck = mysqli_num_rows($result);
 
-if ($resultCheck < 1) {
-    header("Location: signup.php?login=error");
+if ($resultCheck != 1) {
+  echo "fail";
   exit();
 }else{
 if ($row = mysqli_fetch_assoc($result)){
@@ -20,7 +20,7 @@ if ($row = mysqli_fetch_assoc($result)){
   $saltedPwd = $pwd.$salt;
   $hashedPwd = hash('sha256',$saltedPwd);
   if(strcmp($hashedPwd, $row['password']) != 0){
-    header("Location: signup.php?login=error");
+    echo "fail1";
     exit();
   }
   elseif (strcmp($hashedPwd, $row['password']) == 0) {
@@ -31,7 +31,7 @@ if ($row = mysqli_fetch_assoc($result)){
   $_SESSION['u_last'] = $row['lastName'];
   $_SESSION['u_email'] = $row['email'];
   $_SESSION['aboutMe']=$row['aboutMe'];
-  header("Location: Home.php");
+  echo "success";
   exit();
     }
   }
@@ -40,7 +40,7 @@ if ($row = mysqli_fetch_assoc($result)){
 }
 
 else{
-  header("Location: signup.php?login=error");
+  echo "fail2";
   exit();
 }
 

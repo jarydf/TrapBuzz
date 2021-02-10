@@ -6,7 +6,6 @@ include_once "connection.php";
 if(isset($_POST["blogId"]))
  {
    date_default_timezone_set('Canada/Pacific');
-   // $commentContent=$_POST['commentContent'];
 $blogId=$_POST["blogId"];
 $date = date('Y-m-d H:i:s');
 $sql = "SELECT * FROM Comment WHERE blogId=".$blogId." ORDER BY commentDate DESC;";

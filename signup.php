@@ -24,9 +24,11 @@
         <div id="right_side">
             <form id="sign_in" name="signin" method="post" action="login-inc.php" onsubmit="return validateSignIn()">
                 <p id="top_right"> Sign in here: </p>
-                <input class="signin_input" type="text" name="exist_userid" placeholder="Username">
-                <input class="signin_input" type="password" name="exist_pwd" placeholder="Password">
+                <input class="signin_input" type="text" name="exist_userid" placeholder="Username" id="login_username">
+                <input class="signin_input" type="password" name="exist_pwd" placeholder="Password" id="login_password">
                 <input id="submit_1" type="submit" name="signin" value="Log in">
+                <br>
+                <span id="login_errormessage" class="alert alert-danger" role="alert" style="display:none"></span>
                 <a id="recovery_link" href="recovery.php"> Forgot password?</a>
                 <a id="recovery_link" href="admin_signin.php"> Are you an admin? Log in here.</a>
             </form>
@@ -39,7 +41,7 @@
                     <input class="signup_input1" type="text" name="Fname" placeholder="First name">
                     <input class="signup_input1" type="text" name="Lname" placeholder="Last name">
                     <br />
-                    <?php if(isset($name_error)): ?>
+                    <?php if (isset($name_error)): ?>
                     <script>
                     document.forms["signup"]["userid"].style.borderColor = "red";
                     </script>
@@ -56,6 +58,7 @@
     <footer>
         <em>Copyright &copy; 2018 TRAPBUZZ - ALL RIGHTS RESERVED</em>
     </footer>
+    <script type="text/javascript" src="loginajax-inc.js"></script>
 </body>
 
 </html>

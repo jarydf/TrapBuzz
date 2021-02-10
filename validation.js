@@ -69,7 +69,6 @@ function validateSignIn() {
     return false;
   } else if (pass.length < 4) {
     document.forms["signin"]["exist_pwd"].style.borderColor = "red";
-    alert("Invalid password");
     return false;
   }
 }
