@@ -202,10 +202,9 @@ p {
 #newpost {
   background-color: white;
   position: fixed;
-  top: 30%;
-  left: 20%;
-  margin-top: -50px;
-  margin-left: -100px;
+  top: 12em;
+  left: 12em;
+  margin: auto;
 }
 
 #post_title {
