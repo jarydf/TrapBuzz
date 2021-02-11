@@ -36,19 +36,17 @@
                 <img class="icons" id="logo" src="TrapBuzz.png" alt="logo">
                 <h1>Express yourself online</h1>
                 <h3>Join TrapBuzz today.</h3>
-                <form id="sign_up" name="signup" method="post" action="signup-inc.php"
-                    onsubmit="return validateSignUp()">
-                    <input class="signup_input1" type="text" name="Fname" placeholder="First name">
-                    <input class="signup_input1" type="text" name="Lname" placeholder="Last name">
+                <form id="sign_up" name="signup" method="post" action="signup-inc.php">
+                    <input class="signup_input1" type="text" name="Fname" placeholder="First name" id="signup_firstname">
+                    <input class="signup_input1" type="text" name="Lname" placeholder="Last name" id="signup_lastname">
                     <br />
-                    <?php if (isset($name_error)): ?>
-                    <script>
-                    document.forms["signup"]["userid"].style.borderColor = "red";
-                    </script>
-                    <?php endif ?>
-                    <input class="signup_input2" type="email" name="useremail" placeholder="Email">
-                    <input class="signup_input2" type="password" name="userpwd" placeholder="Password">
-                    <input class="signup_input2" type="password" name="re_userpwd" placeholder="Confirm password">
+                    <input class="signup_input2" type="text" name="userid" placeholder="Username" id="signup_username">
+                    <input class="signup_input2" type="email" name="useremail" placeholder="Email" id="signup_email">
+                    <input class="signup_input2" type="password" name="userpwd" placeholder="Password" id="signup_password">
+                    <input class="signup_input2" type="password" name="re_userpwd" placeholder="Confirm password" id="signup_confirmpassword">
+                    <br>
+                    <span id="signup_errormessage" class="alert alert-danger" role="alert" style="display:none"></span>
+                    <br>
                     <input id="submit_2" type="submit" name="submit_Signup" value="Sign me up!">
                 </form>
             </section>
@@ -59,6 +57,7 @@
         <em>Copyright &copy; 2018 TRAPBUZZ - ALL RIGHTS RESERVED</em>
     </footer>
     <script type="text/javascript" src="loginajax-inc.js"></script>
+    <script type="text/javascript" src="signupajax-inc.js"></script>
 </body>
 
 </html>

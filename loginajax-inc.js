@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     if ($.trim(username) == "" && $.trim(password) == "") {
     } else if ($.trim(username) == "") {
-      $("login_username").css("border-color", "red");
+      $("#login_username").css("border-color", "red");
       $("#login_errormessage").show();
       $("#login_errormessage").text("username empty");
     } else if ($.trim(password) == "") {
